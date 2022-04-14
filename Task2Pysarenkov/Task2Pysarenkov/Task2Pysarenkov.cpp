@@ -181,19 +181,6 @@ int main()
 				else
 					dir++;
 				break;
-				/*case 4:
-					iter = MTop;
-					while (iter) {
-						if (iter->junc)
-						{
-							MTop = iter;
-							i = MTop->x;
-							j = MTop->y;
-							break;
-						}
-						iter = iter->next;
-					}
-					break;*/
 			}
 		if (i == m - 1 && j == n - 1)
 			exitfound = true;
@@ -206,10 +193,6 @@ int main()
 		iter = iter->next;
 	}
 
-	//std::string* result = new std::string[k];
-	//coords* co = new coords[k];
-	//int *xx = new int[k];
-	//int *yy = new int[k];
 	coords* head = nullptr;
 	coords* tail = nullptr;
 	iter = MTop;
@@ -224,9 +207,6 @@ int main()
 			Node->next = head;
 			head = Node;
 		}
-		/*xx[i] = iter->x;
-		yy[i] = iter->y;*/
-		//result[i] = "(" + std::to_string(iter->x) + ", " + std::to_string(iter->y) + ")";
 		iter = iter->next;
 	}
 	coords *citer = head;
@@ -234,9 +214,6 @@ int main()
 		std::cout << "(" + std::to_string(citer->x) + ", " + std::to_string(citer->y) + ")" << std::endl;
 		citer = citer->next;
 	}
-	//while (MSt) {
-
-	//}
-	delete MTop;
+	delete MTop, citer;
 	return 0;
 }
